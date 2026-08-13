@@ -1,0 +1,59 @@
+name: "🔒 Security"
+description: "Relatar uma melhoria ou preocupação relacionada à segurança."
+title: "[SECURITY] "
+labels: ["security"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🔒 Aviso
+
+        Não informe credenciais, tokens, senhas ou detalhes de uma
+        vulnerabilidade explorável publicamente.
+
+        Quando possível, utilize um canal privado de divulgação.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Descrição"
+      placeholder: "Descreva o problema de segurança de forma geral."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: "Severidade"
+      options:
+        - "Baixa"
+        - "Média"
+        - "Alta"
+        - "Crítica"
+    validations:
+      required: true
+
+  - type: textarea
+    id: component
+    attributes:
+      label: "Componente afetado"
+      placeholder: "Informe a parte do sistema afetada."
+    validations:
+      required: true
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: "Impacto"
+      placeholder: "Qual o impacto potencial?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: recommendation
+    attributes:
+      label: "Recomendação"
+      placeholder: "Se souber, descreva uma possível correção."
+    validations:
+      required: false

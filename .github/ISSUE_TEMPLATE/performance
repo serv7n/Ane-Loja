@@ -1,0 +1,51 @@
+name: "⚡ Performance"
+description: "Solicitar uma melhoria de desempenho."
+title: "[PERF] "
+labels: ["performance"]
+
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: "Problema de performance"
+      placeholder: "Descreva o problema observado."
+    validations:
+      required: true
+
+  - type: textarea
+    id: location
+    attributes:
+      label: "Local"
+      placeholder: "Informe o endpoint, serviço, classe ou componente."
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: "Métricas / Evidências"
+      placeholder: |
+        Tempo atual:
+        Uso de CPU:
+        Uso de memória:
+        Número de requisições:
+    validations:
+      required: false
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: "Possível solução"
+      placeholder: "Descreva uma possível solução."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: acceptance
+    attributes:
+      label: "Critérios de aceitação"
+      options:
+        - label: "A melhoria deve ser medida antes e depois."
+          required: true
+        - label: "O comportamento da aplicação deve ser mantido."
+          required: true

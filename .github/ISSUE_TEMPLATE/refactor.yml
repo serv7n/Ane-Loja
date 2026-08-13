@@ -1,0 +1,74 @@
+name: "🛠️ Refactor"
+description: "Solicitar uma melhoria ou refatoração no código sem alterar seu comportamento."
+title: "[REFACTOR] "
+labels: ["refactor"]
+
+body:
+  - type: textarea
+    id: objective
+    attributes:
+      label: "Objetivo"
+      description: "O que precisa ser refatorado?"
+      placeholder: "Ex: Refatorar os métodos do ProductController."
+    validations:
+      required: true
+
+  - type: textarea
+    id: location
+    attributes:
+      label: "Local do código"
+      description: "Informe os arquivos, classes ou métodos envolvidos."
+      placeholder: |
+        Arquivo: ProductController.java
+        Classe: ProductController
+        Métodos: createProduct(), updateProduct()
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: "Problema atual"
+      description: "Explique por que o código precisa ser refatorado."
+      placeholder: |
+        Ex:
+        O Controller possui regras de negócio que deveriam
+        estar na camada de Service.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: "Alterações propostas"
+      description: "Descreva uma possível abordagem para a refatoração."
+      placeholder: |
+        - Mover regras de negócio para o Service
+        - Remover código duplicado
+        - Simplificar métodos
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: acceptance
+    attributes:
+      label: "Critérios de aceitação"
+      options:
+        - label: "O comportamento atual da aplicação deve ser mantido."
+          required: true
+        - label: "Código duplicado deve ser removido."
+          required: false
+        - label: "Testes existentes devem continuar passando."
+          required: true
+        - label: "Novos testes devem ser adicionados quando necessário."
+          required: false
+        - label: "A documentação deve ser atualizada quando necessário."
+          required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: "Observações"
+      description: "Informações adicionais."
+    validations:
+      required: false

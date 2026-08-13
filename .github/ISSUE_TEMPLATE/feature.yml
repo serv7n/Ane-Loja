@@ -1,0 +1,43 @@
+name: "✨ Feature"
+description: "Solicitar uma nova funcionalidade."
+title: "[FEATURE] "
+labels: ["feature"]
+
+body:
+  - type: textarea
+    id: objective
+    attributes:
+      label: "Objetivo"
+      description: "O que essa funcionalidade deve fazer?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: "Motivação"
+      description: "Por que essa funcionalidade é necessária?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: requirements
+    attributes:
+      label: "Requisitos"
+      placeholder: |
+        - [ ] Requisito 1
+        - [ ] Requisito 2
+        - [ ] Requisito 3
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: "Critérios de aceitação"
+      placeholder: |
+        - [ ] Funcionalidade implementada
+        - [ ] Testes adicionados
+        - [ ] Documentação atualizada
+    validations:
+      required: true

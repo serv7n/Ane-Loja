@@ -1,0 +1,29 @@
+name: "📚 Documentation"
+description: "Solicitar criação ou atualização de documentação."
+title: "[DOCS] "
+labels: ["documentation"]
+
+body:
+  - type: textarea
+    id: objective
+    attributes:
+      label: "Objetivo"
+      placeholder: "O que precisa ser documentado?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: location
+    attributes:
+      label: "Local"
+      placeholder: "README.md, Swagger, documentação da API..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: "Detalhes"
+      placeholder: "Descreva o que precisa ser adicionado ou alterado."
+    validations:
+      required: true

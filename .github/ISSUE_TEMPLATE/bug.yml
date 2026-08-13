@@ -1,0 +1,71 @@
+name: "🐛 Bug"
+description: "Relatar um comportamento incorreto ou inesperado."
+title: "[BUG] "
+labels: ["bug"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🐛 Relatório de Bug
+        Descreva o problema de forma clara para que ele possa ser reproduzido.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Descrição"
+      description: "O que está acontecendo?"
+      placeholder: "Descreva o problema..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: "Como reproduzir"
+      description: "Informe os passos necessários para reproduzir o problema."
+      placeholder: |
+        1. Acesse...
+        2. Execute...
+        3. Informe...
+        4. Observe...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: "Comportamento esperado"
+      placeholder: "O que deveria acontecer?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: "Comportamento atual"
+      placeholder: "O que está acontecendo atualmente?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: "Ambiente"
+      placeholder: |
+        - Sistema operacional:
+        - Versão:
+        - Java:
+        - Spring Boot:
+        - Banco de dados:
+    validations:
+      required: false
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: "Evidências"
+      description: "Logs, screenshots ou outras informações."
+      placeholder: "Cole logs ou adicione imagens..."
+    validations:
+      required: false

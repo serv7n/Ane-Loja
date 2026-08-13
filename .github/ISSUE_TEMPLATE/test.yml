@@ -1,0 +1,37 @@
+name: "🧪 Test"
+description: "Solicitar criação ou melhoria de testes."
+title: "[TEST] "
+labels: ["test"]
+
+body:
+  - type: textarea
+    id: objective
+    attributes:
+      label: "Objetivo"
+      placeholder: "O que precisa ser testado?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: "Escopo"
+      placeholder: |
+        Classe:
+        Método:
+        Endpoint:
+        Serviço:
+    validations:
+      required: true
+
+  - type: textarea
+    id: scenarios
+    attributes:
+      label: "Cenários"
+      placeholder: |
+        - [ ] Cenário de sucesso
+        - [ ] Dados inválidos
+        - [ ] Recurso inexistente
+        - [ ] Exceção
+    validations:
+      required: true
