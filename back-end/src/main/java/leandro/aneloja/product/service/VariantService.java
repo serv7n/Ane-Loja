@@ -24,7 +24,7 @@ public class VariantService {
                     .orElseThrow(() -> new RuntimeException("Produto não encontrado"));
         }
         @Transactional
-        public VarianteResponseDTO createVariant(Long idProduct, VariantRequestDTO variantRequestDTO){
+        public VarianteResponseDTO createProductVariant(Long idProduct, VariantRequestDTO variantRequestDTO){
             Product p = findProductOrThrow(idProduct);
             ProductVariant variant = mapper.toEntity(variantRequestDTO);
             variant.setProduct(p);
@@ -33,7 +33,7 @@ public class VariantService {
             return mapper.toDTO(variant);
         }
 
-        public   List<VarianteResponseDTO> getVariantByIdProduct(Long id){
+        public   List<VarianteResponseDTO> listVariantsByProduct(Long id){
             Product p = findProductOrThrow(id);
             List<VarianteResponseDTO> variantDTO = p.getVariants().stream().map(mapper::toDTO).toList();
             return variantDTO;
@@ -41,7 +41,7 @@ public class VariantService {
 
         @Transactional
         public VarianteResponseDTO updateVariant(Long id, VariantRequestDTO dto){
-            ProductVariant  v  = getVariantByIdOrThrow(id);
+            ProductVariant  v  = findVariantByIdOrThrow(id);
             v.setSize(dto.size());
             v.setStock(dto.stock());
             v.setPrice(dto.price());
@@ -50,10 +50,10 @@ public class VariantService {
         }
         @Transactional
         public void deleteVariant(Long id){
-            ProductVariant v = getVariantByIdOrThrow(id);
+            ProductVariant v = findVariantByIdOrThrow(id);
             productVariantRepository.delete(v);
         }
-        public ProductVariant getVariantByIdOrThrow(Long id){
+        public ProductVariant findVariantByIdOrThrow(Long id){
             return productVariantRepository.findById(id)
                     .orElseThrow(() -> new RuntimeException("Variant não encontrado"));
         }

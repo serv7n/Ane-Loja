@@ -19,7 +19,7 @@ public class ProductImageService {
     private  final ProductVariantRepository variantRepository;
     private final ImageMapper imageMapper;
 
-    public List<ProductImage> getAllImageWhereNotVariant(){
+    public List<ProductImage> listImagesWithoutVariant(){
         return  repository.findByVariantIsNull();
     }
     private ProductVariant findVariantOrThrow(Long id) {
@@ -31,7 +31,7 @@ public class ProductImageService {
                 .orElseThrow(() -> new RuntimeException("Image não encontrado"));
     }
     @Transactional
-    public void setVariantImage(Long idImage, Long idVariant){
+    public void associateImageWithVariant(Long idImage, Long idVariant){
         ProductVariant variant = findVariantOrThrow(idVariant);
         ProductImage image = findImageOrThrow(idImage);
         variant.getImages().add(image);
@@ -39,10 +39,10 @@ public class ProductImageService {
     }
 
     @Transactional
-    public void  deleteImage(Long id ){
+    public void deleteImage(Long id ){
         repository.delete(findImageOrThrow(id));
     }
-    public ImageResponseDTO newImage(String imageUrl){
+    public ImageResponseDTO createImage(String imageUrl){
         ProductImage image = new ProductImage();
         image.setImageUrl(imageUrl);
         repository.save(image);
