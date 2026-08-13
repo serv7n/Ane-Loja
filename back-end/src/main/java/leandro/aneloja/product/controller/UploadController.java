@@ -21,12 +21,12 @@ public class UploadController {
     private final ProductImageService imageService;
 
 
-//    @PostMapping
-//    public ResponseEntity<ImageResponseDTO> upload(@RequestParam("file") MultipartFile file) {
-//
-//        String urlImage = cloudinaryService.uploadImage(file);
-////        ImageResponseDTO response = imageService.newImage(urlImage);
-//
-//        return ResponseEntity.ok(response);
-//    }
+    @PostMapping
+    public ResponseEntity<ImageResponseDTO> upload(@RequestParam("file") MultipartFile file) {
+
+        String urlImage = cloudinaryService.uploadImage(file);
+        ImageResponseDTO response = imageService.newImage(urlImage);
+
+        return ResponseEntity.ok(response);
+    }
 }

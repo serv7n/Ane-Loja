@@ -16,6 +16,6 @@ RUN mvn clean package -DskipTests
 FROM amazoncorretto:21.0.5
 WORKDIR /app
 
-COPY --from=build ./build/target/*.jar ./anaLoja.jar
+COPY --from=build /build/target/*.jar /app/aneLoja.jar
 
-ENTRYPOINT java -jar anaLoja.jar
+ENTRYPOINT ["java", "-jar", "aneLoja.jar"]

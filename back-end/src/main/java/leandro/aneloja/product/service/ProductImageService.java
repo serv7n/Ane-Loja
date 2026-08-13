@@ -1,6 +1,8 @@
 package leandro.aneloja.product.service;
 
 import jakarta.transaction.Transactional;
+import leandro.aneloja.product.DTOs.Response.ImageResponseDTO;
+import leandro.aneloja.product.mapper.ImageMapper;
 import leandro.aneloja.product.model.ProductImage;
 import leandro.aneloja.product.model.ProductVariant;
 import leandro.aneloja.product.repository.ProductImageRepository;
@@ -15,6 +17,8 @@ import java.util.List;
 public class ProductImageService {
     private  final ProductImageRepository repository;
     private  final ProductVariantRepository variantRepository;
+    private final ImageMapper imageMapper;
+
     public List<ProductImage> getAllImageWhereNotVariant(){
         return  repository.findByVariantIsNull();
     }
@@ -38,7 +42,10 @@ public class ProductImageService {
     public void  deleteImage(Long id ){
         repository.delete(findImageOrThrow(id));
     }
-    public void newImage(ProductImage image){
-
+    public ImageResponseDTO newImage(String imageUrl){
+        ProductImage image = new ProductImage();
+        image.setImageUrl(imageUrl);
+        repository.save(image);
+        return imageMapper.toDTO(image);
     }
 }
