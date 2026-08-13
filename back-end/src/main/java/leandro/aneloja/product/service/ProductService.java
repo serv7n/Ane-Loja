@@ -17,18 +17,18 @@ public class ProductService {
 
     private final ProductRepository repository;
     private final ProductMapper mapper;
-    public Page<ProductResponseDTO> getProducts(int page, int size) {
+    public Page<ProductResponseDTO> listProducts(int page, int size) {
         Page<Product> products = repository.findAll(PageRequest.of(page, size));
         return products.map(mapper::toDTO);
     }
 
     @Transactional
-    public void newProduct(ProductRequestDTO productDTO){
+    public void createProduct(ProductRequestDTO productDTO){
             Product p = mapper.toEntity(productDTO);
             repository.save(p);
     }
     @Transactional
-    public void editProduct(ProductRequestDTO pDTO, Long id){
+    public void updateProduct(ProductRequestDTO pDTO, Long id){
         Product p = findProductOrThrow(id);
 
         p.setName(pDTO.name());
@@ -40,11 +40,11 @@ public class ProductService {
                 .orElseThrow(() -> new RuntimeException("Produto não encontrado"));
     }
     @Transactional
-    public void removeProduct(Long id){
+    public void deleteProduct(Long id){
         Product p = findProductOrThrow(id);
         repository.delete(p);
     }
-    public ProductResponseDTO getProductById(Long id){
+    public ProductResponseDTO findProductById(Long id){
         return mapper.toDTO(findProductOrThrow(id));
     }
 }

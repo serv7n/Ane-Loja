@@ -20,38 +20,38 @@ public class ProductController {
 
 //    Listagem de produtos para painel e usuario
     @GetMapping
-    public ResponseEntity<Page<ProductResponseDTO>> getAllProducts(
+    public ResponseEntity<Page<ProductResponseDTO>> listProducts(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size) {
 
-        return ResponseEntity.ok(service.getProducts(page, size));
+        return ResponseEntity.ok(service.listProducts(page, size));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ProductResponseDTO> getProduct(@PathVariable Long id){
-        return ResponseEntity.ok(service.getProductById(id));
+    public ResponseEntity<ProductResponseDTO> getProductById(@PathVariable Long id){
+        return ResponseEntity.ok(service.findProductById(id));
     }
 
     @PostMapping
-    public ResponseEntity<Void> createNewProduct(
+    public ResponseEntity<Void> createProduct(
             @RequestBody @Valid ProductRequestDTO productDTO){
 
-        service.newProduct(productDTO);
+        service.createProduct(productDTO);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Void> editProduct(
+    public ResponseEntity<Void> updateProduct(
             @RequestBody @Valid ProductRequestDTO productDTO,
             @PathVariable Long id) {
 
-        service.editProduct(productDTO, id);
+        service.updateProduct(productDTO, id);
         return ResponseEntity.ok().build();
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteProduct(@PathVariable Long id) {
-        service.removeProduct(id);
+        service.deleteProduct(id);
         return ResponseEntity.noContent().build();
     }
 }

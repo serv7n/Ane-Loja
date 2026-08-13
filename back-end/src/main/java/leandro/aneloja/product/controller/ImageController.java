@@ -17,16 +17,16 @@ public class ImageController {
     private final ProductImageService service;
 //    todos os produtos sem variantes para serem selecionados
     @GetMapping("")
-    public ResponseEntity<List<ProductImage>> getAllImageWhereNotVariant() {
-        return ResponseEntity.ok(service.getAllImageWhereNotVariant());
+    public ResponseEntity<List<ProductImage>> listImagesWithoutVariant() {
+        return ResponseEntity.ok(service.listImagesWithoutVariant());
     }
 
     @PostMapping("/{idImage}/variant/{idVariant}")
-    public ResponseEntity<Void> setVariantImage(
+    public ResponseEntity<Void> assignImageToVariant(
             @PathVariable Long idImage,
             @PathVariable Long idVariant) {
 
-        service.setVariantImage(idImage, idVariant);
+        service.associateImageWithVariant(idImage, idVariant);
         return ResponseEntity.ok().build();
     }
 
