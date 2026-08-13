@@ -22,10 +22,10 @@ public class UploadController {
 
 
     @PostMapping
-    public ResponseEntity<ImageResponseDTO> upload(@RequestParam("file") MultipartFile file) {
+    public ResponseEntity<ImageResponseDTO> uploadImage(@RequestParam("file") MultipartFile file) {
 
         String urlImage = cloudinaryService.uploadImage(file);
-        ImageResponseDTO response = imageService.newImage(urlImage);
+        ImageResponseDTO response = imageService.createImage(urlImage);
 
         return ResponseEntity.ok(response);
     }

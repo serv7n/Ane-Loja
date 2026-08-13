@@ -21,7 +21,7 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<Object> login(@RequestBody LoginDTO dto) {
+    public ResponseEntity<Object> authenticate(@RequestBody LoginDTO dto) {
         String password = users.get(dto.getEmail());
 
         if (password != null && password.equals(dto.getPassword())) {

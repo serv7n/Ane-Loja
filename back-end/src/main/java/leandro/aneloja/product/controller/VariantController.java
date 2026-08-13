@@ -18,17 +18,17 @@ public class VariantController {
     private final VariantService variantService;
 
     @PostMapping("/products/{idProduct}/variants")
-    public ResponseEntity<Void> createVariants(
+    public ResponseEntity<Void> createProductVariants(
             @PathVariable Long idProduct,
             @RequestBody VariantRequestDTO variantRequestDTO) {
 
-        variantService.createVariant(idProduct, variantRequestDTO);
+        variantService.createProductVariant(idProduct, variantRequestDTO);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
     @GetMapping("/products/{idProduct}/variants")
-    public ResponseEntity<List<VarianteResponseDTO>> getVariants(@PathVariable Long idProduct) {
-        return ResponseEntity.ok(variantService.getVariantByIdProduct(idProduct));
+    public ResponseEntity<List<VarianteResponseDTO>> listVariantsByProduct(@PathVariable Long idProduct) {
+        return ResponseEntity.ok(variantService.listVariantsByProduct(idProduct));
     }
 
     @DeleteMapping("/{id}")
