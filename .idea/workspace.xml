@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f2da03e5-4f32-428c-a9cd-2a36a9fbc07a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.github/workflows/qodana_code_quality.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qodana.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/ISSUE_TEMPLATE/documentation.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="46" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="refactor/5-service-controller" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;serv7n&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/serv7n/Ane-Loja.git&quot;,
+    &quot;accountId&quot;: &quot;123d576f-548d-471d-931e-7f81b72f0f24&quot;
+  }
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.000005593951284" />
+      <entry key="MS500" value="1.245198372149712" />
+      <entry key="S2" value="5.354807167510862" />
+      <entry key="S5" value="12.193904390865548" />
+      <entry key="S10" value="18.550328247830215" />
+      <entry key="S30" value="29.336430917899786" />
+      <entry key="S60" value="36.17479441668341" />
+      <entry key="M2" value="42.21817901134161" />
+      <entry key="M5" value="54.836422045567" />
+      <entry key="M10" value="78.09775664153649" />
+      <entry key="M15" value="100.98624389904282" />
+      <entry key="M30" value="161.37046276254068" />
+      <entry key="H1" value="270.6074422569537" />
+      <entry key="H2" value="415.40527109353854" />
+      <entry key="H4" value="543.1885301454394" />
+      <entry key="D1" value="698.0103786598661" />
+      <entry key="W1" value="730.4078998948014" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="1.5537811799145584E-290" />
+      <entry key="S10" value="2.164361566723664E-145" />
+      <entry key="S30" value="1.6398050534831948E-48" />
+      <entry key="S60" value="2.839142176633599E-24" />
+      <entry key="M2" value="3.759865233059484E-12" />
+      <entry key="M5" value="7.067018461341006E-5" />
+      <entry key="M10" value="0.01879609332769553" />
+      <entry key="M15" value="0.1208816899098229" />
+      <entry key="M30" value="0.7774300648360255" />
+      <entry key="H1" value="1.9715812804344879" />
+      <entry key="H2" value="3.1397285332561844" />
+      <entry key="H4" value="3.962150707939529" />
+      <entry key="D1" value="4.809834799942052" />
+      <entry key="W1" value="4.972380013191807" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.9726603896492676" />
+      <entry key="MS500" value="1.238398762722088" />
+      <entry key="S2" value="5.346792077393465" />
+      <entry key="S5" value="12.186482124995456" />
+      <entry key="S10" value="18.544692937147776" />
+      <entry key="S30" value="29.333419306683755" />
+      <entry key="S60" value="36.172894470689684" />
+      <entry key="M2" value="42.21698314663589" />
+      <entry key="M5" value="54.83562272877478" />
+      <entry key="M10" value="78.11567661290823" />
+      <entry key="M15" value="101.10608711541445" />
+      <entry key="M30" value="162.1463644534338" />
+      <entry key="H1" value="272.57735415422667" />
+      <entry key="H2" value="418.5436819573514" />
+      <entry key="H4" value="547.1498379977854" />
+      <entry key="D1" value="702.8200392718193" />
+      <entry key="W1" value="735.3802540652644" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3HYRmpjdYmWnDN7Y0eHhyys4j60" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.AneLojaApplication.executor": "Run",
+    "KEY_CHAT_IN_TOOLWINDOW": "false",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/dark/IdeaProjects/Ane-Loja/back-end",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.jshint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.jshint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.31296757",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "configurable.group.tools",
+    "to.speed.mode.migration.done": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.AneLojaApplication">
+    <configuration name="AneLojaApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leandro.aneloja.AneLojaApplication" />
+      <module name="main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="leandro.aneloja.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Ane-Loja" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Ane-Loja" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <configuration name="AneLojaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="aneLoja" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="leandro.aneloja.AneLojaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.AneLojaApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-63390994e64e-intellij.indexing.shared.core-IU-262.8665.337" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.8665.337" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f2da03e5-4f32-428c-a9cd-2a36a9fbc07a" name="Changes" comment="" />
+      <created>1786043177680</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1786043177680</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

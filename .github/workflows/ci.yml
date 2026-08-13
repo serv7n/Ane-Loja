@@ -1,0 +1,53 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_DB: aneloja
+          POSTGRES_USER: aneloja
+          POSTGRES_PASSWORD: aneloja
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd="pg_isready -U aneloja -d aneloja"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
+
+    env:
+      DB_URL: jdbc:postgresql://localhost:5432/aneloja
+      DB_USERNAME: aneloja
+      DB_PASSWORD: aneloja
+      CLOUDINARY_NAME: dummy
+      CLOUDINARY_API_KEY: dummy
+      CLOUDINARY_API_SECRET: dummy
+      JWT_SECRET: dummy
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+          cache: maven
+          cache-dependency-path: back-end/1.xml
+
+      - name: Build and test
+        working-directory: back-end
+        run: ./mvnw clean verify

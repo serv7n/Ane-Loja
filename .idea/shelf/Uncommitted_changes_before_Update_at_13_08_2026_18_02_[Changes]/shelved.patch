@@ -1,0 +1,172 @@
+Index: README.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># AneLoja\r\n# Sobre o Projeto\r\n\r\nProjeto de **e-commerce** desenvolvido para uma loja, com o objetivo de oferecer aos clientes uma experiência simples e intuitiva para visualizar os produtos, comparar opções e escolher os itens que melhor atendem às suas necessidades.\r\n\r\nAtualmente, a plataforma permite a **consulta dos produtos** e direciona o cliente para a realização da compra através do **WhatsApp**.\r\n\r\nComo parte da evolução do projeto, estão previstas novas funcionalidades, como:\r\n\r\n* Autenticação de usuários utilizando **Google**;\r\n* Gerenciamento de **carrinho de compras**;\r\n* Integração com **APIs de terceiros** especializadas em processamento de pagamentos via **PIX**;\r\n* Geração e acompanhamento das transações diretamente pela plataforma.\r\n\r\n\r\n## Funcionalidades\r\n\r\nO projeto permite a integracao de imagens a cada tipo de produto e suas variacoes cor\r\nalem disso possui dashbord feito para uma melhor praticidade do dia a dia\r\n\r\n## Tecnologias utilizadas\r\n\r\nJava com spring Jwt, Postgrssql, Validation, Cloudnary para envio de imagens\r\n\r\n\r\n### Estrutura do Backend\r\n\r\nO backend seguirá uma arquitetura de **Monólito Modular**, organizando o sistema em módulos independentes e bem definidos. Essa abordagem facilita a manutenção, a integração entre equipes e permite que determinados módulos sejam separados em serviços independentes futuramente, caso necessário.\r\n\r\n```text\r\nsrc/main/java/com/ecommerce\r\n│\r\n├── product/\r\n│   ├── controller/\r\n│   ├── service/\r\n│   ├── repository/\r\n│   ├── entity/\r\n│   └── dto/\r\n│\r\n└── shared/\r\n    ├── exception/\r\n    ├── config/\r\n    └── security/\r\n```\r\n\r\nCada módulo possui suas próprias responsabilidades, mantendo **Controller, Service, Repository, Entity e DTOs** organizados dentro do respectivo domínio.\r\n\r\nA estrutura permite que diferentes equipes trabalhem em módulos específicos com menor acoplamento, mantendo o projeto como uma única aplicação Spring Boot.\r\n\r\n## Estrutura do projeto\r\n\r\nO projeto será desenvolvido com **Spring Boot**, disponibilizando uma **API REST** para comunicação com o frontend, que possivelmente será desenvolvido em **Angular**.\r\n\r\nA estrutura dos produtos seguirá a relação:\r\n\r\n```text\r\nProduct\r\n └── ProductVariant\r\n      └── ProductImage\r\n```\r\n\r\nO frontend será dividido em dois painéis:\r\n\r\n* **Painel do Cliente:** visualização dos produtos, variantes e informações, com a compra inicialmente realizada através do **WhatsApp**.\r\n* **Painel Administrativo:** cadastro e gerenciamento de produtos, variantes, imagens, preços e demais informações da loja.\r\n\r\nEssa estrutura mantém o frontend separado do backend e permite que a API seja utilizada por diferentes aplicações futuramente.\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/README.md b/README.md
+--- a/README.md	(revision 7ac09e87972b675dab7d7ff65f1217bddfbb4300)
++++ b/README.md	(date 1786654854493)
+@@ -47,6 +47,16 @@
+ 
+ A estrutura permite que diferentes equipes trabalhem em módulos específicos com menor acoplamento, mantendo o projeto como uma única aplicação Spring Boot.
+ 
++## Contribuição
++
++O fluxo sugerido para o repositório está documentado em [`CONTRIBUTING.md`](CONTRIBUTING.md) e usa:
++
++- Conventional Commits;
++- Issue Templates;
++- Pull Request Template;
++- CODEOWNERS;
++- GitHub Actions para CI e validação de commits.
++
+ ## Estrutura do projeto
+ 
+ O projeto será desenvolvido com **Spring Boot**, disponibilizando uma **API REST** para comunicação com o frontend, que possivelmente será desenvolvido em **Angular**.
+Index: .github/ISSUE_TEMPLATE/documentation.yml
+===================================================================
+diff --git a/.github/ISSUE_TEMPLATE/documentation.yml b/.github/ISSUE_TEMPLATE/documentation.yml
+deleted file mode 100644
+--- a/.github/ISSUE_TEMPLATE/documentation.yml	(revision 7ac09e87972b675dab7d7ff65f1217bddfbb4300)
++++ /dev/null	(revision 7ac09e87972b675dab7d7ff65f1217bddfbb4300)
+@@ -1,29 +0,0 @@
+-name: "📚 Documentation"
+-description: "Solicitar criação ou atualização de documentação."
+-title: "[DOCS] "
+-labels: ["documentation"]
+-
+-body:
+-  - type: textarea
+-    id: objective
+-    attributes:
+-      label: "Objetivo"
+-      placeholder: "O que precisa ser documentado?"
+-    validations:
+-      required: true
+-
+-  - type: textarea
+-    id: location
+-    attributes:
+-      label: "Local"
+-      placeholder: "README.md, Swagger, documentação da API..."
+-    validations:
+-      required: true
+-
+-  - type: textarea
+-    id: details
+-    attributes:
+-      label: "Detalhes"
+-      placeholder: "Descreva o que precisa ser adicionado ou alterado."
+-    validations:
+-      required: true
+Index: qodana.yaml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/qodana.yaml b/qodana.yaml
+new file mode 100644
+--- /dev/null	(date 1786654598118)
++++ b/qodana.yaml	(date 1786654598118)
+@@ -0,0 +1,49 @@
++#-------------------------------------------------------------------------------#
++#               Qodana analysis is configured by qodana.yaml file               #
++#             https://www.jetbrains.com/help/qodana/qodana-yaml.html            #
++#-------------------------------------------------------------------------------#
++
++#################################################################################
++#              WARNING: Do not store sensitive information in this file,        #
++#               as its contents will be included in the Qodana report.          #
++#################################################################################
++version: "1.0"
++
++#Specify inspection profile for code analysis
++profile:
++  name: qodana.starter
++
++#Enable inspections
++#include:
++#  - name: <SomeEnabledInspectionId>
++
++#Disable inspections
++#exclude:
++#  - name: <SomeDisabledInspectionId>
++#    paths:
++#      - <path/where/not/run/inspection>
++
++projectJDK: "21" #(Applied in CI/CD pipeline)
++
++#Execute shell command before Qodana execution (Applied in CI/CD pipeline)
++#bootstrap: sh ./prepare-qodana.sh
++
++#Install IDE plugins before Qodana execution (Applied in CI/CD pipeline)
++#plugins:
++#  - id: <plugin.id> #(plugin id can be found at https://plugins.jetbrains.com)
++
++# Quality gate. Will fail the CI/CD pipeline if any condition is not met
++# severityThresholds - configures maximum thresholds for different problem severities
++# testCoverageThresholds - configures minimum code coverage on a whole project and newly added code
++# Code Coverage is available in Ultimate and Ultimate Plus plans
++#failureConditions:
++#  severityThresholds:
++#    any: 15
++#    critical: 5
++#  testCoverageThresholds:
++#    fresh: 70
++#    total: 50
++  
++#Qodana supports other languages, for example, Python, JavaScript, TypeScript, Go, C#, PHP
++#For all supported languages see https://www.jetbrains.com/help/qodana/linters.html
++linter: jetbrains/qodana-jvm-community:2026.2
+Index: .github/workflows/qodana_code_quality.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.github/workflows/qodana_code_quality.yml b/.github/workflows/qodana_code_quality.yml
+new file mode 100644
+--- /dev/null	(date 1786654598096)
++++ b/.github/workflows/qodana_code_quality.yml	(date 1786654598096)
+@@ -0,0 +1,39 @@
++#-------------------------------------------------------------------------------#
++#            Discover all capabilities of Qodana in our documentation           #
++#             https://www.jetbrains.com/help/qodana/about-qodana.html           #
++#-------------------------------------------------------------------------------#
++
++name: Qodana
++on:
++  workflow_dispatch:
++  pull_request:
++  push:
++    branches:
++      - main
++
++jobs:
++  qodana:
++    runs-on: ubuntu-latest
++    permissions:
++      contents: write
++      pull-requests: write
++      checks: write
++    steps:
++      - uses: actions/checkout@v4
++        with:
++          ref: ${{ github.event.pull_request.head.sha }}
++          fetch-depth: 0
++      - name: 'Qodana Scan'
++        uses: JetBrains/qodana-action@v2026.2
++        env:
++          QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
++        with:
++          # When pr-mode is set to true, Qodana analyzes only the files that have been changed
++          pr-mode: false
++          use-caches: true
++          post-pr-comment: true
++          use-annotations: true
++          # Upload Qodana results (SARIF, other artifacts, logs) as an artifact to the job
++          upload-result: false
++          # quick-fixes available in Ultimate and Ultimate Plus plans
++          push-fixes: 'none'
+\ No newline at end of file

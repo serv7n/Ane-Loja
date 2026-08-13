@@ -47,6 +47,16 @@ Cada módulo possui suas próprias responsabilidades, mantendo **Controller, Ser
 
 A estrutura permite que diferentes equipes trabalhem em módulos específicos com menor acoplamento, mantendo o projeto como uma única aplicação Spring Boot.
 
+## Contribuição
+
+O fluxo sugerido para o repositório está documentado em [`CONTRIBUTING.md`](CONTRIBUTING.md) e usa:
+
+- Conventional Commits;
+- Issue Templates;
+- Pull Request Template;
+- CODEOWNERS;
+- GitHub Actions para CI e validação de commits.
+
 ## Estrutura do projeto
 
 O projeto será desenvolvido com **Spring Boot**, disponibilizando uma **API REST** para comunicação com o frontend, que possivelmente será desenvolvido em **Angular**.

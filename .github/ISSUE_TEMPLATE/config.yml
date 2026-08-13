@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: "Reporte de segurança"
+    url: "https://github.com/serv7n/Ane-Loja/security/advisories/new"
+    about: "Use este canal para relatar vulnerabilidades de segurança de forma privada, quando possível."
