@@ -13,17 +13,14 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 @RestController
-@RequestMapping("/api/upload")
+@RequestMapping("/upload")
 @RequiredArgsConstructor
 public class UploadController {
-
     private final CloudinaryService cloudinaryService;
     private final ProductImageService imageService;
 
-
     @PostMapping
     public ResponseEntity<ImageResponseDTO> uploadImage(@RequestParam("file") MultipartFile file) {
-
         String urlImage = cloudinaryService.uploadImage(file);
         ImageResponseDTO response = imageService.createImage(urlImage);
 

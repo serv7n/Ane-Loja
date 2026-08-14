@@ -25,7 +25,6 @@ public class ImageController {
     public ResponseEntity<Void> assignImageToVariant(
             @PathVariable Long idImage,
             @PathVariable Long idVariant) {
-
         service.associateImageWithVariant(idImage, idVariant);
         return ResponseEntity.ok().build();
     }

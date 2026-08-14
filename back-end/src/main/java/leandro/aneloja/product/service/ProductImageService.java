@@ -7,6 +7,7 @@ import leandro.aneloja.product.model.ProductImage;
 import leandro.aneloja.product.model.ProductVariant;
 import leandro.aneloja.product.repository.ProductImageRepository;
 import leandro.aneloja.product.repository.ProductVariantRepository;
+import leandro.aneloja.shared.exception.EntityNotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -24,11 +25,11 @@ public class ProductImageService {
     }
     private ProductVariant findVariantOrThrow(Long id) {
         return variantRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Variant não encontrado"));
+                .orElseThrow(() -> new EntityNotFoundException("Variant não encontrado", "campo id variant"));
     }
     private ProductImage findImageOrThrow(Long id) {
         return repository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Image não encontrado"));
+                .orElseThrow(() -> new EntityNotFoundException("Image não encontrado", "campo id image"));
     }
     @Transactional
     public void associateImageWithVariant(Long idImage, Long idVariant){

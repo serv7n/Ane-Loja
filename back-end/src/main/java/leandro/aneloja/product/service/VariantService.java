@@ -8,6 +8,7 @@ import leandro.aneloja.product.model.Product;
 import leandro.aneloja.product.model.ProductVariant;
 import leandro.aneloja.product.repository.ProductRepository;
 import leandro.aneloja.product.repository.ProductVariantRepository;
+import leandro.aneloja.shared.exception.EntityNotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +22,7 @@ public class VariantService {
     private final VariantMapper mapper;
         private Product findProductOrThrow(Long id) {
             return productRepository.findById(id)
-                    .orElseThrow(() -> new RuntimeException("Produto não encontrado"));
+                    .orElseThrow(() -> new EntityNotFoundException("Produto não encontrado"));
         }
         @Transactional
         public VarianteResponseDTO createProductVariant(Long idProduct, VariantRequestDTO variantRequestDTO){
@@ -55,7 +56,7 @@ public class VariantService {
         }
         public ProductVariant findVariantByIdOrThrow(Long id){
             return productVariantRepository.findById(id)
-                    .orElseThrow(() -> new RuntimeException("Variant não encontrado"));
+                    .orElseThrow(() -> new EntityNotFoundException("Variant não encontrado"));
         }
 
 }

@@ -23,7 +23,6 @@ public class ProductController {
     public ResponseEntity<Page<ProductResponseDTO>> listProducts(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size) {
-
         return ResponseEntity.ok(service.listProducts(page, size));
     }
 
@@ -35,7 +34,6 @@ public class ProductController {
     @PostMapping
     public ResponseEntity<Void> createProduct(
             @RequestBody @Valid ProductRequestDTO productDTO){
-
         service.createProduct(productDTO);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
@@ -44,7 +42,6 @@ public class ProductController {
     public ResponseEntity<Void> updateProduct(
             @RequestBody @Valid ProductRequestDTO productDTO,
             @PathVariable Long id) {
-
         service.updateProduct(productDTO, id);
         return ResponseEntity.ok().build();
     }

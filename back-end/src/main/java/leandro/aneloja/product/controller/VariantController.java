@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/variants")
+@RequestMapping("/variants")
 @AllArgsConstructor
 public class VariantController {
 
@@ -21,13 +21,13 @@ public class VariantController {
     public ResponseEntity<Void> createProductVariants(
             @PathVariable Long idProduct,
             @RequestBody VariantRequestDTO variantRequestDTO) {
-
         variantService.createProductVariant(idProduct, variantRequestDTO);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
     @GetMapping("/products/{idProduct}/variants")
-    public ResponseEntity<List<VarianteResponseDTO>> listVariantsByProduct(@PathVariable Long idProduct) {
+    public ResponseEntity<List<VarianteResponseDTO>> listVariantsByProduct(
+            @PathVariable Long idProduct) {
         return ResponseEntity.ok(variantService.listVariantsByProduct(idProduct));
     }
 
@@ -41,7 +41,6 @@ public class VariantController {
     public ResponseEntity<VarianteResponseDTO> updateVariant(
             @PathVariable Long id,
             @RequestBody VariantRequestDTO dto) {
-
         return ResponseEntity.ok(variantService.updateVariant(id, dto));
     }
 }
