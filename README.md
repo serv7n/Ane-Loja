@@ -74,4 +74,4 @@ O frontend será dividido em dois painéis:
 * **Painel do Cliente:** visualização dos produtos, variantes e informações, com a compra inicialmente realizada através do **WhatsApp**.
 * **Painel Administrativo:** cadastro e gerenciamento de produtos, variantes, imagens, preços e demais informações da loja.
 
-Essa estrutura mantém o frontend separado do backend e permite que a API seja utilizada por diferentes aplicações futuramente.
+Essa estrutura mantém o frontend separado do backend e permite que a API seja utilizada por diferentes aplicações futuramente.a
